@@ -1,4 +1,4 @@
-import video from "../models/video";
+import video from "../models/video.js";
 
 
 class VideoController {
