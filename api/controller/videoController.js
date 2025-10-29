@@ -1,5 +1,6 @@
 import video from "../models/video";
 
+
 class VideoController {
     static ListarVideos = async (req, res)=>{
         try {
