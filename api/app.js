@@ -10,8 +10,15 @@ app.use(express.json());
 app.set("json spaces", 2);
 routes(app);
 
-// Conecta ao banco
-await conectaBanco();
+// 🔧 Conecta ao banco de forma segura
+(async () => {
+  try {
+    await conectaBanco();
+    console.log("✅ Banco conectado com sucesso");
+  } catch (erro) {
+    console.error("❌ Erro ao conectar ao banco:", erro);
+  }
+})();
 
-// 🚀 exporta o app (NÃO use app.listen)
+// 🚀 exporta o app (sem listen)
 export default app;
